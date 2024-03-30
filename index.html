@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="./style/style.css" />
+</head>
+
+<body>
+  <!-- left side -->
+  <aside>
+    <img id="logo" src="./images/no-text-logo.png" />
+    <img id="text-logo" src="./images/text-logo.png" />
+
+    <nav>
+      <a href="#">
+        <i class="bi bi-house-fill"></i>
+        <span>Home</span>
+      </a>
+
+      <a href="#">
+        <i class="bi bi-search"></i>
+        <span>Search</span>
+      </a>
+
+      <a href="#">
+        <i class="bi bi-bookmark-fill"></i>
+        <span>Library</span>
+      </a>
+
+      <a href="#">
+        <i class="bi bi-music-note-list"></i>
+        <span>Lists</span>
+      </a>
+
+      <a href="#">
+        <i class="bi bi-heart-fill"></i>
+        <span>Liked Songs</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- main content -->
+  <main>
+    <!-- upside -->
+    <header>
+      <form id="search-form">
+        <input type="search" placeholder="Song Name..." />
+        <button>
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+
+      <ul>
+        <li>Premium</li>
+        <li>Help</li>
+        <li>Discounts</li>
+        <li>Sign up</li>
+      </ul>
+
+    </header>
+
+    <!-- songs -->
+    <div class="songs">
+      <h2 id="title">Most Popular in The Nederlands</h2>
+
+      <div id="list">
+        <!-- cards -->
+        <div class="card">
+          <figure>
+            <img
+              src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/36/19/66/36196640-1561-dc5e-c6bc-1e5f4befa583/093624856771.jpg/400x400cc.jpg"/>
+            <div id="play">
+              <i id="play-btn" class="bi bi-play-fill"></i>
+            </div>
+          </figure>
+
+          <h4>Teddy Swims</h4>
+          <p>Lose Control</p>
+        </div>
+        <!-- kart -->
+      </div>
+    </div>
+  </main>
+
+  <!--Play area-->
+
+  <div class="play-area">
+    <div>
+      <img src="https://is1-ssl.mzstatic.com/image/thumb/Features115/v4/87/8e/a0/878ea0a1-ed8d-6fd7-3567-76ab8e6529af/mzl.ayuccyos.jpg/800x800cc.jpg" alt="">
+    </div>
+
+    <div>
+      <p>playing</p>
+      <h3>Lose Yourself (From 8 Mile)</h3>
+    </div>
+
+    <audio src="" controls></audio>
+
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>

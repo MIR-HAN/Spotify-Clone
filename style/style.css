@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  background: black;
+  color: white;
+  overflow: hidden;
+  font-family: "poppins";
+}
+.white {
+  background: white !important;
+  color: black !important;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 15px;
+}
+
+aside nav {
+  display: flex;
+  flex-direction: column;
+}
+
+aside nav a {
+  padding: 20px 10px;
+  display: flex;
+  gap: 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+
+aside nav a:hover {
+  background: rgb(32, 32, 32);
+}
+
+@media (max-width: 870px) {
+  aside nav a span {
+    display: none;
+  }
+
+  aside nav a i {
+    font-size: 20px;
+  }
+}
+
+aside #logo {
+  width: 40px;
+  display: none;
+}
+
+aside #text-logo {
+  width: 130px;
+}
+
+@media (max-width: 870px) {
+  aside #logo {
+    display: block;
+  }
+
+  aside #text-logo {
+    display: none;
+  }
+}
+
+main {
+  width: 100%;
+}
+
+main header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 10px;
+  gap:40px
+}
+
+@media (max-width: 870px) {
+  main header {
+    justify-content: center;
+  }
+}
+
+main header form {
+  display: flex;
+}
+
+main header form input {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+main header form button {
+  background: #1db954;
+  height: 100%;
+  padding: 0 25px;
+  border: none;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+main header form button:hover {
+  background: #0ff15e;
+}
+
+main header ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+@media (max-width: 870px) {
+  main header ul {
+    display: none;
+  }
+}
+
+main header ul li {
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 300ms;
+}
+
+main header ul li:hover {
+  background: rgb(60, 60, 60);
+}
+
+main .songs {
+  background: rgb(42, 42, 42);
+  height: 100%;
+}
+
+.songs #title {
+  text-transform: capitalize;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .songs #title {
+    text-align: center;
+  }
+
+}
+
+.songs #list {
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  overflow: auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px;
+
+}
+
+@media (max-width:600px) {
+  .songs #list {
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+  
+  }
+  .songs #list .card {
+ align-items: center;
+margin: auto;
+
+  }
+}
+
+::-webkit-scrollbar {
+  background: black;
+  width: 7px;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0e9c3f;
+  border-radius: 3px;
+}
+
+.songs #list .card {
+  width: 200px;
+  padding: 15px;
+  background: #181818;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.songs #list .card:hover #play {
+  opacity: 1;
+  bottom: 20px;
+}
+
+.songs #list .card figure {
+  position: relative;
+}
+
+.songs #list .card figure img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.songs #list .card figure #play {
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+  background: #1db954;
+  opacity: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+  transition: all 0.3s;
+}
+
+.songs #list .card figure #play:hover {
+  background: #0e9c3f;
+  scale: 0.9;
+}
+
+.songs #list .card h4 {
+  margin-bottom: 6px;
+}
+
+/* loader*/
+.loader {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 15px;
+  max-width: 6rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50% -50%);
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  animation: pulsOut 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.75));
+}
+
+.loader:before {
+  width: 100%;
+  padding-bottom: 100%;
+  box-shadow: inset 0 0 0 1rem #fff;
+  animation-name: pulsIn;
+}
+
+.loader:after {
+  width: calc(100% - 2rem);
+  padding-bottom: calc(100% - 2rem);
+  box-shadow: 0 0 0 0 #fff;
+}
+
+@keyframes pulsIn {
+  0% {
+    box-shadow: inset 0 0 0 1rem #fff;
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    box-shadow: inset 0 0 0 0 #fff;
+    opacity: 0;
+  }
+}
+
+@keyframes pulsOut {
+
+  0%,
+  50% {
+    box-shadow: 0 0 0 0 #fff;
+    opacity: 0;
+  }
+
+  100% {
+    box-shadow: 0 0 0 1rem #fff;
+    opacity: 1;
+  }
+}
+
+/*play area*/
+.play-area {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  background: linear-gradient(240deg,
+      #fa8bff 0%,
+      #2bd2ff 52%,
+      #2bff88 90%);
+  width: 100%;
+  justify-content: center;
+  gap: 50px;
+  padding: 10px 40px;
+}
+
+@media (max-width:600px) {
+  .play-area {
+    padding: 10px;
+    font-size: 13px;
+    gap: 35px;
+  }
+}
+
+.play-area img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  
+}
+
+.animate{
+  animation: turn 4s linear infinite;
+}
+
+/*animation*/
+@keyframes turn {
+
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
