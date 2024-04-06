@@ -29,7 +29,7 @@ export default class UI {
         div.className = "card";
         div.innerHTML = `
               <figure>
-              <img
+              <img 
                 src="${song.images.background}"
               />
               <div id="play">
@@ -67,7 +67,9 @@ export default class UI {
   renderPlayingInfo(song) {
     this.playArea.innerHTML = `
 <div>
-      <img class="animate" src="${song.photo}" alt="">
+      <img id="photo"
+      class="animate"
+       src="${song.photo}" alt="">
     </div>
 
     <div>
@@ -75,7 +77,7 @@ export default class UI {
       <h3>${song.title}</h3>
     </div>
 
-    <audio autoplay src="${song.url}" controls></audio>
+    <audio autoplay id="myAudio" src="${song.url}" controls></audio>
 `
   }
 

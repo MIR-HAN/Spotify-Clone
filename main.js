@@ -42,6 +42,21 @@ ui.list.addEventListener('click', (e) => {
     //rendering play song
     ui.renderPlayingInfo(song);
 
+    const photoElement = document.getElementById('photo')
+    const audioElement = document.getElementById('myAudio')
+    
+    audioElement.addEventListener('pause', () => {
+      if (photoElement) {
+        photoElement.classList.remove('animate')
+      }
+    });
+    audioElement.addEventListener('play', () => {
+      if (photoElement) {
+        photoElement.classList.add('animate')
+      }
+    });
+
+
   }
 
 
